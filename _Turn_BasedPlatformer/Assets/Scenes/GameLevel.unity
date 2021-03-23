@@ -123,6 +123,26 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &942662636 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7063425955472623057, guid: 2859c461152a2b74ab8b581d831abdfa, type: 3}
+  m_PrefabInstance: {fileID: 1587775630}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &942662638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942662636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70afdbd17e92fa94488596f50bc8eff9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseColor: {r: 0.5176471, g: 0.8392157, b: 0.8392157, a: 1}
+  spaceColor: {r: 0.13333334, g: 0.105882354, b: 0.2, a: 1}
+  maxHeight: 500
 --- !u!1 &1042122481 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2069768727743241151, guid: 8772c136d9bda3245a9a4e8ec9ae9091, type: 3}
