@@ -6,60 +6,33 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] float speed = 2f;
     [SerializeField] float jumpForce = 2f;
-    [SerializeField] float timeBetweenSteps = 1f;
-    [SerializeField] GameObject feet;
 
-    bool isTouchingGround = true;
+    private float horizontalInput = 0f;
+    private float verticalInput = 0f;
 
-    float timeSinceLastStep = Mathf.Infinity;
 
     Rigidbody2D rb2d = null;
 
     private void Awake()
     {
-        //init!?
         rb2d = GetComponent<Rigidbody2D>();
-        FindObjectOfType<AudioManager>().Play("Song");
     }
 
+    public float getHorizontalInput(){
+        return horizontalInput;
+    }
+    public float getVerticalInput(){
+        return verticalInput;
+    }
     void FixedUpdate()
     {
-        timeSinceLastStep += Time.deltaTime;
-
         //Horizontal Movement
-        float HorizontalInput = Input.GetAxis("Horizontal");
-        float VerticalInput = Input.GetAxis("Vertical");
+        horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis("Vertical");
+
+        transform.Translate(new Vector2(horizontalInput * speed, verticalInput * jumpForce)  * Time.deltaTime);
 
 
-        //Should you be walking? can be negative value
-        if(HorizontalInput != 0 && timeSinceLastStep > timeBetweenSteps && isTouchingGround)
-        {
-            FindObjectOfType<AudioManager>().Play("Walking");
-            timeSinceLastStep = 0;
-        }
-
-        if (VerticalInput > 0 && isTouchingGround)
-        {
-            FindObjectOfType<AudioManager>().Play("Jumping");
-        }
-
-
-        //Movement
-        transform.Translate(new Vector2(HorizontalInput * speed, VerticalInput * jumpForce)  * Time.deltaTime);
-
-
-    }
-
-    private void OnCollisionEnter2D(Collision2D col)
-    {
-        if(col.collider.tag == "Ground") isTouchingGround = true;
-        //print("enter");
-    }
-
-    private void OnCollisionExit2D(Collision2D col)
-    {
-        if (col.collider.tag == "Ground") isTouchingGround = false;
-        //print("exit");
     }
 
 }
