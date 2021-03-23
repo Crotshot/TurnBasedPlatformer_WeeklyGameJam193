@@ -5,58 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      ticks: 637521010199210449
-=======
-      ticks: 637521014507397687
->>>>>>> origin/Oisín
-=======
-<<<<<<< Updated upstream
-      ticks: 637521011101779384
-=======
-      ticks: 637521077569421333
->>>>>>> Stashed changes
->>>>>>> Cillins2ndBranch
-=======
-      ticks: 637521014507397687
->>>>>>> Oisín
-    m_Hash: 2405029207
-=======
-      ticks: 637521157314734714
-    m_Hash: 3232274582
->>>>>>> Croteru
+      ticks: 637521184248341495
+    m_Hash: 1806988107
   m_LockFileStatus:
     m_FilePath: C:/Users/Crotty's PC/Documents/GitHub/TurnBasedPlatformer_WeeklyGameJam193/_Turn_BasedPlatformer/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      ticks: 637521081381884547
-=======
-      ticks: 637521078967351323
->>>>>>> origin/Oisín
-=======
-<<<<<<< Updated upstream
-      ticks: 637521031572545900
-=======
-      ticks: 637521098959570963
->>>>>>> Stashed changes
->>>>>>> Cillins2ndBranch
-=======
-      ticks: 637521098280950952
->>>>>>> Oisín
-    m_Hash: 165267155
-=======
-      ticks: 637521157329372927
+      ticks: 637521187195809798
     m_Hash: 1118545359
->>>>>>> Croteru
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:

@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 368523759}
   - component: {fileID: 368523758}
   - component: {fileID: 368523757}
+  - component: {fileID: 368523760}
   m_Layer: 0
   m_Name: __app
   m_TagString: Untagged
@@ -179,3 +180,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &368523760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368523756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba0bd344a9909e41a446c6f72264334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 24300002, guid: 60d89331904c1784a8b5c5c189aa77b7, type: 2}
+  sounds:
+  - name: Song
+    clip: {fileID: 8300000, guid: 02ab06bd3540bb84bb9de410ca1e99d0, type: 3}
+    volume: 0.15
+    volumeVariance: 0
+    pitch: 0
+    pitchVariance: 0
+    loop: 1
+    mixerGroup: {fileID: -7933903194752107653, guid: 60d89331904c1784a8b5c5c189aa77b7, type: 2}
+    source: {fileID: 0}
+  - name: Walking
+    clip: {fileID: 8300000, guid: c9b22b60d5f9eec44b025685adf940d4, type: 3}
+    volume: 0.1
+    volumeVariance: 0.05
+    pitch: 2.2
+    pitchVariance: 0.5
+    loop: 0
+    mixerGroup: {fileID: -507910427543880772, guid: 60d89331904c1784a8b5c5c189aa77b7, type: 2}
+    source: {fileID: 0}
+  - name: Jumping
+    clip: {fileID: 8300000, guid: a46d7a2c5be4c5740b205ddd7fd8acb0, type: 3}
+    volume: 0.1
+    volumeVariance: 0.05
+    pitch: 2.2
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -507910427543880772, guid: 60d89331904c1784a8b5c5c189aa77b7, type: 2}
+    source: {fileID: 0}

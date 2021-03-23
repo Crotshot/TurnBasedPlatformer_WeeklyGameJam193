@@ -5,146 +5,112 @@ using System;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] float speed = 2f;
-    [SerializeField] float jumpForce = 2f;
-<<<<<<< Updated upstream
-    [SerializeField] float timeBetweenSteps = 1f;
-    [SerializeField] GameObject feet;
+    [SerializeField] float speed = 6f;
+    [SerializeField] float jumpForce = 10f;
+    [SerializeField] float timeBetweenWalk = 0.18f;
+    [SerializeField] float jumpTimer = 0.25f;
 
-    bool isTouchingGround = true;
-
-    float timeSinceLastStep = Mathf.Infinity;
-=======
-    [SerializeField] float timeBetweenWalk = 0.5f;
-    [SerializeField] GameObject feet = null;
+    [SerializeField] LayerMask mask;
 
     private float horizontalInput = 0f;
     private float verticalInput = 0f;
-    private bool isJumping = false;
-    private float timeSinceLastWalk = Mathf.Infinity;
-    private bool songPlaying = false;
->>>>>>> Stashed changes
+    private bool airborn = false;
+    private float timeSinceLastWalk = Mathf.Infinity, timeSinceLastJump = Mathf.Infinity;
+
 
     Rigidbody2D rb2d = null;
     AudioManager audioManager = null;
+
+
+    private void Awake()
+    {
+        //init!?
+        rb2d = GetComponent<Rigidbody2D>();
+        audioManager = FindObjectOfType<AudioManager>();
+    }
 
     private void Start()
     {
         audioManager.Play("Song");
     }
 
-    private void Awake()
-    {
-        //init!?
-        rb2d = GetComponent<Rigidbody2D>();
-<<<<<<< Updated upstream
-        FindObjectOfType<AudioManager>().Play("Song");
-=======
-        audioManager = FindObjectOfType<AudioManager>();
->>>>>>> Stashed changes
-    }
-
     void FixedUpdate()
     {
-<<<<<<< Updated upstream
-        timeSinceLastStep += Time.deltaTime;
+        //Ray to check if on ground
+        RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.25f), Vector2.down * 0.25f, mask);
+        Debug.DrawRay(new Vector2(transform.position.x, transform.position.y - 0.25f), Vector2.down * 0.25f, Color.green);
 
-        //Horizontal Movement
-        float HorizontalInput = Input.GetAxis("Horizontal");
-        float VerticalInput = Input.GetAxis("Vertical");
-
-
-        //Should you be walking? can be negative value
-        if(HorizontalInput != 0 && timeSinceLastStep > timeBetweenSteps && isTouchingGround)
-        {
-            FindObjectOfType<AudioManager>().Play("Walking");
-            timeSinceLastStep = 0;
+        float distance = 1f;
+        if (hit.collider != null) {
+            distance = Mathf.Abs(hit.point.y - transform.position.y);
+        }
+        if (distance < 0.3f) {
+            airborn = false;
+        }
+        else {
+            airborn = true;
         }
 
-        if (VerticalInput > 0 && isTouchingGround)
-        {
-            FindObjectOfType<AudioManager>().Play("Jumping");
-        }
-
-
-        //Movement
-        transform.Translate(new Vector2(HorizontalInput * speed, VerticalInput * jumpForce)  * Time.deltaTime);
-=======
-        
-        //Updating timer
+        //Updating timers
         timeSinceLastWalk += Time.deltaTime;
+        timeSinceLastJump += Time.deltaTime;
 
-        //Horizontal & Vertical Movement
+        //Horizontal & Vertical Movement Input
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
         //Will check for horizontal movement, can be -value.
-        if(horizontalInput != 0 && !isJumping && timeSinceLastWalk > timeBetweenWalk)
+        if(horizontalInput != 0 && !airborn && timeSinceLastWalk > timeBetweenWalk)
         {
             audioManager.Play("Walking");
-            //print("play sound");
             timeSinceLastWalk = 0;
         }
 
+        //Left and right movement
+        transform.Translate(new Vector2(horizontalInput * speed * Time.deltaTime, 0));
+
+
         //Vertical input will only play audio if going up.
-        if (verticalInput > 0 && !isJumping)
+        if (verticalInput > 0 && !airborn &&  timeSinceLastJump > jumpTimer)
         {
+            timeSinceLastJump = 0;
             audioManager.Play("Jumping");
-            //print("play sound");
-        }
-
-        //Setting forces.
-        transform.Translate(new Vector2(horizontalInput * speed, verticalInput * jumpForce)  * Time.deltaTime);
-    }
-
-    //Checking to see if the player has hit the ground.
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        if(col.gameObject.tag == "Ground")
-        {
-            isJumping = false;
-            //print(isJumping);
-        }
-        
-    }
-
-    //Checking to see if the player has taken a mad leap.
-    void OnCollisionExit2D(Collision2D col)
-    {
-        if (col.gameObject.tag == "Ground")
-        {
-            isJumping = true;
-            //print(isJumping);
+            //Jump force
+            rb2d.AddForce(Vector2.up * jumpForce);
         }
     }
->>>>>>> Stashed changes
 
-
-
-    //Getters, used in ??
-    public float getHorizontalInput()
-    {
-        return horizontalInput;
-    }
-
-<<<<<<< Updated upstream
-    private void OnCollisionEnter2D(Collision2D col)
-    {
-        if(col.collider.tag == "Ground") isTouchingGround = true;
-        //print("enter");
-    }
-
-    private void OnCollisionExit2D(Collision2D col)
-    {
-        if (col.collider.tag == "Ground") isTouchingGround = false;
-        //print("exit");
-    }
-
-=======
+    //Getters, used in animation controller of player
     public float getVerticalInput()
     {
         return verticalInput;
     }
->>>>>>> Stashed changes
+
+    public float getHorizontalInput()
+    {
+        return horizontalInput;
+    }
 }
 
+/*
+//Checking to see if the player has hit the ground.
+void OnCollisionEnter2D(Collision2D col)
+{
+    if(col.gameObject.tag == "Ground")
+    {
+        isJumping = false;
+        //print(isJumping);
+    }
+
+}
+
+//Checking to see if the player has taken a mad leap.
+void OnCollisionExit2D(Collision2D col)
+{
+    if (col.gameObject.tag == "Ground")
+    {
+        isJumping = true;
+        //print(isJumping);
+    }
+}
+*/

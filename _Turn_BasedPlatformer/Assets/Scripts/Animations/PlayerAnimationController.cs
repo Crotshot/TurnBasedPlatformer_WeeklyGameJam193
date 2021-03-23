@@ -9,12 +9,10 @@ public class PlayerAnimationController : MonoBehaviour
     private Animator playerAnimator = null;
     private SpriteRenderer playerSpriteRender = null;
 
-    void Start()
-    {
+    void Start(){
         playerController = gameObject.GetComponent<PlayerController>();
         playerAnimator = gameObject.GetComponent<Animator>();
         playerSpriteRender = gameObject.GetComponent<SpriteRenderer>();
-
     }
 
     void FixedUpdate(){
@@ -22,7 +20,6 @@ public class PlayerAnimationController : MonoBehaviour
         if(playerController.getHorizontalInput() > 0){
             playerAnimator.SetBool("isRunning",true);
             playerSpriteRender.flipX = false;
-
         }
         //playerRunningRight
         if(playerController.getHorizontalInput() < 0){
