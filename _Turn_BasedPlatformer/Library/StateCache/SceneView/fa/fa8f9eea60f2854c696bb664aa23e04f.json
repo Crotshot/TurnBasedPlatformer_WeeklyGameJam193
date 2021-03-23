@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":true,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true,"showVisualEffectGraphs":true,"m_FxEnabled":true},"in2DMode":false,"pivot":{"x":0.09842760860919953,"y":-1.223244309425354,"z":-12.183037757873536},"rotation":{"x":-0.1384170949459076,"y":0.1147061213850975,"z":-0.016141412779688836,"w":-0.9835795164108276},"size":6.091083526611328,"orthographic":false}
 =======
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":true,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true,"showVisualEffectGraphs":true,"m_FxEnabled":true},"in2DMode":true,"pivot":{"x":-0.09713400900363922,"y":31.840974807739259,"z":-12.173269271850586},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":1.1971157789230347,"orthographic":true}
@@ -15,3 +16,6 @@
 =======
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":true,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true,"showVisualEffectGraphs":true,"m_FxEnabled":true},"in2DMode":true,"pivot":{"x":-0.4180324077606201,"y":31.932857513427736,"z":-13.130167961120606},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":8.332513809204102,"orthographic":true}
 >>>>>>> Oisín
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":true,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true,"showVisualEffectGraphs":true,"m_FxEnabled":true},"in2DMode":true,"pivot":{"x":0.9741524457931519,"y":31.8463191986084,"z":-26.879878997802736},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":3.3068037033081056,"orthographic":true}
+>>>>>>> Croteru
