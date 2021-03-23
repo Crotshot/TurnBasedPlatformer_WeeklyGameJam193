@@ -5,7 +5,11 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
+<<<<<<< Updated upstream
       ticks: 637521011101779384
+=======
+      ticks: 637521077569421333
+>>>>>>> Stashed changes
     m_Hash: 2405029207
   m_LockFileStatus:
     m_FilePath: D:/CloneRepo/TurnBasedPlatformer_WeeklyGameJam193/_Turn_BasedPlatformer/Packages/packages-lock.json
@@ -13,7 +17,11 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
+<<<<<<< Updated upstream
       ticks: 637521031572545900
+=======
+      ticks: 637521098959570963
+>>>>>>> Stashed changes
     m_Hash: 165267155
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}

@@ -4,6 +4,7 @@ using UnityEngine;
 [System.Serializable]
 public class Sound
 {
+    //Sound object used in AudioManager.cs
 
     public string name;
 
