@@ -257,6 +257,78 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1179230115
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1179230117}
+  - component: {fileID: 1179230116}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1179230116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179230115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba0bd344a9909e41a446c6f72264334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: 24300002, guid: 60d89331904c1784a8b5c5c189aa77b7, type: 2}
+  sounds:
+  - name: Song
+    clip: {fileID: 8300000, guid: 02ab06bd3540bb84bb9de410ca1e99d0, type: 3}
+    volume: 0.25
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    mixerGroup: {fileID: -7933903194752107653, guid: 60d89331904c1784a8b5c5c189aa77b7, type: 2}
+    source: {fileID: 0}
+  - name: Walking
+    clip: {fileID: 8300000, guid: d7d532a488f9dc34eab6e0623a8615e0, type: 3}
+    volume: 0.2
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -507910427543880772, guid: 60d89331904c1784a8b5c5c189aa77b7, type: 2}
+    source: {fileID: 0}
+  - name: Jumping
+    clip: {fileID: 8300000, guid: a46d7a2c5be4c5740b205ddd7fd8acb0, type: 3}
+    volume: 0.2
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -507910427543880772, guid: 60d89331904c1784a8b5c5c189aa77b7, type: 2}
+    source: {fileID: 0}
+--- !u!4 &1179230117
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179230115}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.0012636, y: 0.4338554, z: -10.106199}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1685479466
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,6 +504,10 @@ PrefabInstance:
       propertyPath: jumpHeight
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4341120852681152839, guid: 2859c461152a2b74ab8b581d831abdfa, type: 3}
+      propertyPath: timeBetweenSteps
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4824532726613100967, guid: 2859c461152a2b74ab8b581d831abdfa, type: 3}
       propertyPath: m_Name
       value: Core
@@ -444,5 +520,9 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 7063425955472623060, guid: 2859c461152a2b74ab8b581d831abdfa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2859c461152a2b74ab8b581d831abdfa, type: 3}
