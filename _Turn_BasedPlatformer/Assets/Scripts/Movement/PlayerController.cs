@@ -7,6 +7,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float speed = 2f;
     [SerializeField] float jumpForce = 2f;
 
+    private float horizontalInput = 0f;
+    private float verticalInput = 0f;
+
+
     Rigidbody2D rb2d = null;
 
     private void Awake()
@@ -14,13 +18,19 @@ public class PlayerController : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
     }
 
+    public float getHorizontalInput(){
+        return horizontalInput;
+    }
+    public float getVerticalInput(){
+        return verticalInput;
+    }
     void FixedUpdate()
     {
         //Horizontal Movement
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float VerticalInput = Input.GetAxis("Vertical");
+        horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis("Vertical");
 
-        transform.Translate(new Vector2(horizontalInput * speed, VerticalInput * jumpForce)  * Time.deltaTime);
+        transform.Translate(new Vector2(horizontalInput * speed, verticalInput * jumpForce)  * Time.deltaTime);
 
 
     }
