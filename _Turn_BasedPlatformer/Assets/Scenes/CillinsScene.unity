@@ -123,32 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &368104715 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3061011979639029043, guid: 2859c461152a2b74ab8b581d831abdfa, type: 3}
-  m_PrefabInstance: {fileID: 7063425957113087114}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &368104721
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 368104715}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.5
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 4
 --- !u!1 &685381675
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,8 +263,8 @@ MonoBehaviour:
   mixerGroup: {fileID: 24300002, guid: 60d89331904c1784a8b5c5c189aa77b7, type: 2}
   sounds:
   - name: Song
-    clip: {fileID: 8300000, guid: 02ab06bd3540bb84bb9de410ca1e99d0, type: 3}
-    volume: 0.25
+    clip: {fileID: 8300000, guid: fdcdb8c961dd6d84a9e8b1bfddddb401, type: 3}
+    volume: 0.05
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -298,19 +272,19 @@ MonoBehaviour:
     mixerGroup: {fileID: -7933903194752107653, guid: 60d89331904c1784a8b5c5c189aa77b7, type: 2}
     source: {fileID: 0}
   - name: Walking
-    clip: {fileID: 8300000, guid: d7d532a488f9dc34eab6e0623a8615e0, type: 3}
-    volume: 0.2
+    clip: {fileID: 8300000, guid: c9b22b60d5f9eec44b025685adf940d4, type: 3}
+    volume: 0.1
     volumeVariance: 0
-    pitch: 1
-    pitchVariance: 0
+    pitch: 3
+    pitchVariance: 0.5
     loop: 0
     mixerGroup: {fileID: -507910427543880772, guid: 60d89331904c1784a8b5c5c189aa77b7, type: 2}
     source: {fileID: 0}
   - name: Jumping
     clip: {fileID: 8300000, guid: a46d7a2c5be4c5740b205ddd7fd8acb0, type: 3}
-    volume: 0.2
+    volume: 0.1
     volumeVariance: 0
-    pitch: 1
+    pitch: 2.2
     pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: -507910427543880772, guid: 60d89331904c1784a8b5c5c189aa77b7, type: 2}
@@ -444,21 +418,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1108465464957445478, guid: 2859c461152a2b74ab8b581d831abdfa, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2483983282538279498, guid: 2859c461152a2b74ab8b581d831abdfa, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2483983282538279498, guid: 2859c461152a2b74ab8b581d831abdfa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.14602457
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2483983282538279498, guid: 2859c461152a2b74ab8b581d831abdfa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.13440712
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2483983282538279498, guid: 2859c461152a2b74ab8b581d831abdfa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.846102
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2483983282538279498, guid: 2859c461152a2b74ab8b581d831abdfa, type: 3}
       propertyPath: m_LocalRotation.w
@@ -488,6 +466,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3061011979639029043, guid: 2859c461152a2b74ab8b581d831abdfa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4341120852681152839, guid: 2859c461152a2b74ab8b581d831abdfa, type: 3}
       propertyPath: speed
       value: 6
@@ -505,6 +487,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4341120852681152839, guid: 2859c461152a2b74ab8b581d831abdfa, type: 3}
+      propertyPath: timeBetweenWalk
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4341120852681152839, guid: 2859c461152a2b74ab8b581d831abdfa, type: 3}
       propertyPath: timeBetweenSteps
       value: 0.5
       objectReference: {fileID: 0}
@@ -512,9 +498,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: Core
       objectReference: {fileID: 0}
+    - target: {fileID: 6474076227934862350, guid: 2859c461152a2b74ab8b581d831abdfa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754325480827200972, guid: 2859c461152a2b74ab8b581d831abdfa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.20602457
+      objectReference: {fileID: 0}
     - target: {fileID: 6754325480827200972, guid: 2859c461152a2b74ab8b581d831abdfa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.51
+      value: 0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754325480827200972, guid: 2859c461152a2b74ab8b581d831abdfa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754325480827200972, guid: 2859c461152a2b74ab8b581d831abdfa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754325480827200972, guid: 2859c461152a2b74ab8b581d831abdfa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6754325480827200972, guid: 2859c461152a2b74ab8b581d831abdfa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6851211538755618803, guid: 2859c461152a2b74ab8b581d831abdfa, type: 3}
       propertyPath: m_Materials.Array.data[0]

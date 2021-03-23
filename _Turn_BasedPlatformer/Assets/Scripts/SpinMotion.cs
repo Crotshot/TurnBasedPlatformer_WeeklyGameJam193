@@ -9,4 +9,5 @@ public class SpinMotion : MonoBehaviour
     {
         transform.Rotate(0, 0, degreePerSecond * Time.deltaTime);
     }
+
 }

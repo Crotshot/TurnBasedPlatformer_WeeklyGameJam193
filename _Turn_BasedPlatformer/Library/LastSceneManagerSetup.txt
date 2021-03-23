@@ -1,5 +1,13 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/GameLevel.unity
+=======
+<<<<<<< Updated upstream
+- path: Assets/Scenes/SampleScene.unity
+=======
+- path: Assets/Scenes/CillinsScene.unity
+>>>>>>> Stashed changes
+>>>>>>> Cillins2ndBranch
   isLoaded: 1
   isActive: 1
   isSubScene: 0

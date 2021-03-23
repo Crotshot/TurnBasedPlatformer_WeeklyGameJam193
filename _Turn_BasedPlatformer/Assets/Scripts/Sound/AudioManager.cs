@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
 
     public AudioMixerGroup mixerGroup;
 
+    //Array of sound objects see Sound.cs
     public Sound[] sounds;
 
     void Awake()
@@ -32,6 +33,8 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+
+    //Plays Audio and allows for changes in audio (varies in pitch and volume)
     public void Play(string sound)
     {
         Sound s = Array.Find(sounds, item => item.name == sound);
