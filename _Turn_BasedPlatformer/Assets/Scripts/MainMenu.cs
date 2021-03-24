@@ -18,4 +18,8 @@ public class MainMenu : MonoBehaviour
     public void QuitGameButton() {
         gM.QuitGame();
     }
+
+    public void MainMenuButton() {
+        gM.LoadMenu();
+    }
 }
