@@ -198,7 +198,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 02ab06bd3540bb84bb9de410ca1e99d0, type: 3}
     volume: 0.15
     volumeVariance: 0
-    pitch: 0
+    pitch: 1
     pitchVariance: 0
     loop: 1
     mixerGroup: {fileID: -7933903194752107653, guid: 60d89331904c1784a8b5c5c189aa77b7, type: 2}
@@ -217,6 +217,15 @@ MonoBehaviour:
     volume: 0.1
     volumeVariance: 0.05
     pitch: 2.2
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: -507910427543880772, guid: 60d89331904c1784a8b5c5c189aa77b7, type: 2}
+    source: {fileID: 0}
+  - name: Landing
+    clip: {fileID: 8300000, guid: c9b22b60d5f9eec44b025685adf940d4, type: 3}
+    volume: 0.068
+    volumeVariance: 0.113
+    pitch: 0.81
     pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: -507910427543880772, guid: 60d89331904c1784a8b5c5c189aa77b7, type: 2}

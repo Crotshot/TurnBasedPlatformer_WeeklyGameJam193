@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8410866173079175518}
   - component: {fileID: 7964430784372891396}
   - component: {fileID: 1946840524413144633}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ MonoBehaviour:
   volumeTrigger: {fileID: 3060484528523080789}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 257
+    m_Bits: 1792
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
   antialiasingMode: 0
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 5987888376531945093}
   - component: {fileID: 658720427313372809}
   - component: {fileID: 4996146503551003247}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -241,7 +241,7 @@ MonoBehaviour:
   jumpTimer: 0.25
   mask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 512
 --- !u!50 &994827962832374979
 Rigidbody2D:
   serializedVersion: 4
@@ -358,7 +358,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5897060647523368105}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}

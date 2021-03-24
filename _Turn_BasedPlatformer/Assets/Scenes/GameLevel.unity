@@ -123,27 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &1042122481 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2069768727743241151, guid: 8772c136d9bda3245a9a4e8ec9ae9091, type: 3}
-  m_PrefabInstance: {fileID: 1695957785}
-  m_PrefabAsset: {fileID: 0}
---- !u!58 &1042122484
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1042122481}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 32
 --- !u!1001 &1587775630
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -216,6 +195,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2069768727743241151, guid: 8772c136d9bda3245a9a4e8ec9ae9091, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2069768728243682748, guid: 8772c136d9bda3245a9a4e8ec9ae9091, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -264,9 +247,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Centre
       objectReference: {fileID: 0}
+    - target: {fileID: 2069768728243682751, guid: 8772c136d9bda3245a9a4e8ec9ae9091, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2069768728327272231, guid: 8772c136d9bda3245a9a4e8ec9ae9091, type: 3}
-      propertyPath: m_TagString
-      value: Ground
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8772c136d9bda3245a9a4e8ec9ae9091, type: 3}
+--- !u!1 &1695957786 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2069768728243682751, guid: 8772c136d9bda3245a9a4e8ec9ae9091, type: 3}
+  m_PrefabInstance: {fileID: 1695957785}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1695957787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695957786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d24a02283582ed74cafb627f22b07842, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  degreePerSecond: 5

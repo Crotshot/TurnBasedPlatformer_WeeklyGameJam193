@@ -10,16 +10,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float timeBetweenWalk = 0.18f;
     [SerializeField] float jumpTimer = 0.25f;
 
-    [SerializeField] LayerMask mask;
-
     private float horizontalInput = 0f;
     private float verticalInput = 0f;
-    private bool airborn = false;
+    private bool airborne = false;
     private float timeSinceLastWalk = Mathf.Infinity, timeSinceLastJump = Mathf.Infinity;
-
-
-    Rigidbody2D rb2d = null;
-    AudioManager audioManager = null;
+    private Rigidbody2D rb2d = null;
+    private AudioManager audioManager = null;
 
 
     private void Awake()
@@ -36,19 +32,34 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        //Ray to check if on ground
-        RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.25f), Vector2.down * 0.25f, mask);
-        Debug.DrawRay(new Vector2(transform.position.x, transform.position.y - 0.25f), Vector2.down * 0.25f, Color.green);
+        //Rays to check if on standable layer
+        RaycastHit2D hitRight = Physics2D.Raycast(new Vector2(transform.position.x + 0.2f, transform.position.y -0.1f), Vector2.down, 0.275f);
+        Debug.DrawRay(new Vector2(transform.position.x + 0.2f, transform.position.y - 0.1f), Vector2.down * 0.275f, Color.green);
+        Debug.DrawRay(new Vector2(transform.position.x - 0.13f, transform.position.y - 0.1f), Vector2.down * 0.275f, Color.blue);
 
-        float distance = 1f;
-        if (hit.collider != null) {
-            distance = Mathf.Abs(hit.point.y - transform.position.y);
+        if (hitRight.collider != null) {
+            Debug.Log(hitRight.collider.name);
+            Debug.DrawLine(new Vector2(transform.position.x + 0.2f, transform.position.y - 0.1f), hitRight.point, Color.red, 1);
+            if (airborne) {
+                audioManager.Play("Landing");
+            }
+            airborne = false;
         }
-        if (distance < 0.3f) {
-            airborn = false;
-        }
-        else {
-            airborn = true;
+        else{ //If right ray does not collide use left ray
+            RaycastHit2D hitLeft = Physics2D.Raycast(new Vector2(transform.position.x - 0.13f, transform.position.y - 0.1f), Vector2.down, 0.275f);
+            if (hitLeft.collider != null) {
+
+                Debug.Log(hitLeft.collider.name);
+                Debug.DrawLine(new Vector2(transform.position.x - 0.13f, transform.position.y - 0.1f), hitLeft.point, Color.yellow, 1);
+
+                if (airborne) {
+                    audioManager.Play("Landing");
+                }
+                airborne = false;
+            }
+            else { //If left ray does not collide we are airborne
+                airborne = true;
+            }
         }
 
         //Updating timers
@@ -60,19 +71,26 @@ public class PlayerController : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
 
         //Will check for horizontal movement, can be -value.
-        if(horizontalInput != 0 && !airborn && timeSinceLastWalk > timeBetweenWalk)
+        if(horizontalInput != 0 && !airborne && timeSinceLastWalk > timeBetweenWalk)
         {
             audioManager.Play("Walking");
             timeSinceLastWalk = 0;
         }
 
+        if(horizontalInput < 0) {
+            transform.Translate(new Vector2(horizontalInput * speed * 1.2f * Time.deltaTime, 0));
+        }
+        else if (horizontalInput > 0) {
+            transform.Translate(new Vector2(horizontalInput * speed* 0.8f * Time.deltaTime, 0));
+        }
         //Left and right movement
-        transform.Translate(new Vector2(horizontalInput * speed * Time.deltaTime, 0));
+       
 
 
         //Vertical input will only play audio if going up.
-        if (verticalInput > 0 && !airborn &&  timeSinceLastJump > jumpTimer)
+        if (verticalInput > 0 && !airborne &&  timeSinceLastJump > jumpTimer)
         {
+            rb2d.velocity = Vector2.zero;
             timeSinceLastJump = 0;
             audioManager.Play("Jumping");
             //Jump force
@@ -91,26 +109,3 @@ public class PlayerController : MonoBehaviour
         return horizontalInput;
     }
 }
-
-/*
-//Checking to see if the player has hit the ground.
-void OnCollisionEnter2D(Collision2D col)
-{
-    if(col.gameObject.tag == "Ground")
-    {
-        isJumping = false;
-        //print(isJumping);
-    }
-
-}
-
-//Checking to see if the player has taken a mad leap.
-void OnCollisionExit2D(Collision2D col)
-{
-    if (col.gameObject.tag == "Ground")
-    {
-        isJumping = true;
-        //print(isJumping);
-    }
-}
-*/
