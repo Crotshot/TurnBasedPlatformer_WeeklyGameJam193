@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: b375f4d0db2c3fa4998fc328ca83a562, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -152,7 +152,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 934f9dee03ac7ea4a88ec5665300a1f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -234,7 +234,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 4f2b90114adf869419b7d5e159e8d518, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -275,7 +275,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6684000225620338520}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5897060647523368105}
@@ -420,7 +420,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseColor: {r: 0.5176471, g: 0.8392157, b: 0.8392157, a: 1}
   spaceColor: {r: 0.13333334, g: 0.105882354, b: 0.2, a: 1}
-  maxHeight: 200
+  heavenColor: {r: 1, g: 0.8745098, b: 0.5294118, a: 1}
+  startingOffset: 30
+  maxHeight: 70
+  heavenHeight: 107
+  heavenStart: 104
+  maxHeavenHeight: 31
 --- !u!1 &7180877628073610100
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,7 +496,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 8cb0564935d6ddb49a93d6478e6a375f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -596,14 +601,14 @@ MonoBehaviour:
   - {fileID: 6688278443422362961}
   heightOfActivation:
   - 0
-  - 50
+  - 38
   - 75
-  - 125
+  - 111
   heightOfDeactivation:
   - 5000
   - 75
-  - 125
-  - 250
+  - 111
+  - 1000
 --- !u!50 &994827962832374979
 Rigidbody2D:
   serializedVersion: 4
@@ -680,7 +685,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: -831426100493663744, guid: 57728adc1891415499c7560e57abd534, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
