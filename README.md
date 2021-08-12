@@ -8,7 +8,7 @@ turn based platformer we made a game in which the player is platforming and the
 world itself is turning around the player.
 
 The players goal is to keep climbing up the various obsticles in their path 
-to reach the heavens. The player will fail contiously and will have to 
+to reach the heavens. The player will fail continuously and will have to 
 persevere in order to win the game.
 
 Made in Unity with Oisín and Cillín Ivory.
